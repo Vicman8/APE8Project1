@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    
     public float moveSpeed;
     public Rigidbody2D rb;
 
     private Vector2 moveDirection;
 
-    // Update is called once per frame
+    //calls move processinputs function
     void Update()
     {
         ProcessInputs();
     }
-
+    
+    //calls move function
     void FixedUpdate()
     {
         Move();
     }
 
+    //Moves the player up/down/left/right
     void ProcessInputs()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
     }
 
+    //changes the speed of the player
     void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
