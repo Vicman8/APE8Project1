@@ -654,6 +654,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 2298168439865476655, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298168441654258324, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: shotDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2298168441654258410, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
       propertyPath: m_SortingOrder
       value: 2
