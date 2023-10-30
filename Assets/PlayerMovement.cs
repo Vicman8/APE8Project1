@@ -10,10 +10,23 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
 
-    //calls move processinputs function
     void Update()
     {
+        //rotates character depending on if she's aiming left/right
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (mousePos.x < transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, -180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        //calls move processinputs function
         ProcessInputs();
+        
     }
     
     //calls move function
