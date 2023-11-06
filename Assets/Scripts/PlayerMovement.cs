@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        float xPos = transform.position.x;
+        float yPos = transform.position.y;
+
         //rotates character depending on if she's aiming left/right
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -23,6 +26,12 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+
+        //checks to make sure character is not out of bounds
+        xPos = Mathf.Clamp(xPos, -7.3f, 7.3f);
+        yPos = Mathf.Clamp(yPos, -4f, 4f);
+
+        transform.position = new Vector2(xPos, yPos);
 
         //calls move processinputs function
         ProcessInputs();

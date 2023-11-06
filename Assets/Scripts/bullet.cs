@@ -15,7 +15,11 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += (transform.TransformDirection(Vector3.right)) * speed;
+        transform.position += (transform.TransformDirection(Vector3.right)) * speed * Time.deltaTime;
+        if (transform.position.x > Mathf.Abs(15) || transform.position.y > Mathf.Abs(15))
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
