@@ -17,13 +17,14 @@ public class BarKeep : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            int bottleNum = Random.Range(0, 3);
+            int bottleNum = Random.Range(0, bottle.Length);
             float randX = Random.Range(-3.97f, 1.04f);
             float randY = Random.Range(-1.28f, 2.98f);
             randCoords = new Vector2(randX, randY);
 
             Bottle newBottle = Instantiate(bottle[bottleNum], transform.position, Quaternion.identity);
-            newBottle.Throw(transform.position, randCoords, Random.Range(25, 45), 10);
+            newBottle.Throw(transform.position, randCoords, Random.Range(60, 75), 10);
+
         }
     }
 }

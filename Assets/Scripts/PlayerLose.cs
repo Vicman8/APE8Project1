@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bottleshoot : MonoBehaviour
+public class PlayerLose : MonoBehaviour
 {
+    public int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +16,4 @@ public class Bottleshoot : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "bullet")
-        {
-            Debug.Log("contact");
-            Destroy(gameObject);
-        }
-    }
-
 }

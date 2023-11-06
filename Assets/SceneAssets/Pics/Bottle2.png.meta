@@ -120,12 +120,12 @@ TextureImporter:
       name: Bottle2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
+        x: 43
+        y: 91
+        width: 6
+        height: 20
       alignment: 9
-      pivot: {x: 0.7154626, y: 0.5348543}
+      pivot: {x: 0.5206413, y: 0.44851226}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
