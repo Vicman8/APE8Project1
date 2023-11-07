@@ -10,6 +10,13 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
 
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Update()
     {
         float xPos = transform.position.x;
@@ -58,4 +65,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
+
+
 }
