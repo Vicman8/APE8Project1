@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
 
     private Animator anim;
 
+    [SerializeField] float moveSpeed;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -19,14 +21,18 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Vector3 movement = Vector3.zero;
+
         //moving left and right
-        float moveInputX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInputX * speed, rb.velocity.y);
+        float moveInputX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
+        //rb.velocity = new Vector2(moveInputX * speed, rb.velocity.y);
+
 
         //moving up and down
-        float moveInputY = Input.GetAxisRaw("Vertical");
-        rb.velocity = new Vector2(moveInputY * speed, rb.velocity.x);
+        float moveInputY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
+        //rb.velocity = new Vector2(moveInputY * speed, rb.velocity.x);
 
+        movement += (transform.right * moveInputX) + (transform.up * moveInputY);
 
         //Animation for moving to the left and right
         if (moveInputX == 0)
