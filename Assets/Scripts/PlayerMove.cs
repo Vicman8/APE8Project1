@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
 
         //moving left and right
         float moveInputX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-        rb.velocity = new Vector2(moveInputX * speed, rb.velocity.x);
+        rb.velocity = new Vector2(moveInputX * speed, rb.velocity.x); 
 
 
         //moving up and down
@@ -47,10 +47,12 @@ public class PlayerMove : MonoBehaviour
         if (moveInputX < 0)
         {
             transform.eulerAngles = new Vector2(0, 180);
+            anim.SetBool("IsRunning", true);
         }
         else if (moveInputX > 0)
         {
             transform.eulerAngles = new Vector2(0, 0);
+            anim.SetBool("IsRunning", true);
         }
 
         //Animation for moving Up and Down
