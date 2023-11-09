@@ -21,18 +21,18 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector3 movement = Vector3.zero;
+        Vector2 movement = Vector2.zero;
 
         //moving left and right
         float moveInputX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
-        //rb.velocity = new Vector2(moveInputX * speed, rb.velocity.y);
+        rb.velocity = new Vector2(moveInputX * speed, rb.velocity.x);
 
 
         //moving up and down
         float moveInputY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
-        //rb.velocity = new Vector2(moveInputY * speed, rb.velocity.x);
+        rb.velocity = new Vector2(rb.velocity.x, moveInputY * speed);
 
-        movement += (transform.right * moveInputX) + (transform.up * moveInputY);
+        //movement += (transform.right * moveInputX) + (transform.up * moveInputY);
 
         //Animation for moving to the left and right
         if (moveInputX == 0)

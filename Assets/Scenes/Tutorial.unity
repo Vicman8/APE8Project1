@@ -2013,6 +2013,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1184062127482421182, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184062127482421182, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184062127482421182, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1073842258, guid: ecb2c1cfc22d0254a9187c8d367a839d, type: 3}
@@ -2122,8 +2130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1381a7332f0c824b8d1015975f64270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  moveSpeed: 5
+  speed: 50
+  moveSpeed: 50
 --- !u!95 &1602947748
 Animator:
   serializedVersion: 4
