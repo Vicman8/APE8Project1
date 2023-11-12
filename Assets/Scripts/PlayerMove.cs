@@ -46,12 +46,12 @@ public class PlayerMove : MonoBehaviour
 
         if (moveInputX < 0)
         {
-            transform.eulerAngles = new Vector2(0, 180);
+           // transform.eulerAngles = new Vector2(0, 180);
             anim.SetBool("IsRunning", true);
         }
         else if (moveInputX > 0)
         {
-            transform.eulerAngles = new Vector2(0, 0);
+           // transform.eulerAngles = new Vector2(0, 0);
             anim.SetBool("IsRunning", true);
         }
 

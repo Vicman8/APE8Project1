@@ -7,10 +7,13 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bullet;
     public float shotDelay;
     private float timer;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         timer = shotDelay;
+        anim = GetComponent<Animator>();
+
     }
 
     void Update()
