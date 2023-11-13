@@ -21,7 +21,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector2 movement = Vector2.zero;
+        //gets mouse position
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //moving left and right
         float moveInputX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
@@ -32,46 +33,16 @@ public class PlayerMove : MonoBehaviour
         float moveInputY = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
         rb.velocity = new Vector2(rb.velocity.x, moveInputY * speed);
 
-        //movement += (transform.right * moveInputX) + (transform.up * moveInputY);
-
-        //Animation for moving to the left and right
+        //Animation for idle 
         if (moveInputX == 0)
         {
-            anim.SetBool("IsRunning", false);
-        }
-        else
-        {
-            anim.SetBool("IsRunning", true);
+            anim.Play("idle");
         }
 
-        if (moveInputX < 0)
+        //Animation for moving
+        if (Mathf.Abs(moveInputX) > 0 || Mathf.Abs(moveInputY) > 0)
         {
-           // transform.eulerAngles = new Vector2(0, 180);
-            anim.SetBool("IsRunning", true);
-        }
-        else if (moveInputX > 0)
-        {
-           // transform.eulerAngles = new Vector2(0, 0);
-            anim.SetBool("IsRunning", true);
-        }
-
-        //Animation for moving Up and Down
-        if (moveInputY == 0)
-        {
-            anim.SetBool("IsRunning", false);
-        }
-        else
-        {
-            anim.SetBool("IsRunning", true);
-        }
-
-        if (moveInputY < 0)
-        {
-            transform.eulerAngles = new Vector2(0, 180);
-        }
-        else if (moveInputY > 0)
-        {
-            transform.eulerAngles = new Vector2(0, 0);
+            anim.Play("Run");
         }
 
 
