@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   moveSpeed: 50
+  gun: {fileID: 925465960921358990}
 --- !u!1 &925465960921358990
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,21 +8,28 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D rb;
 
     private Animator anim;
-
+    private SpriteRenderer sprRend;
     [SerializeField] float moveSpeed;
+    [SerializeField] GameObject gun;
+
+    [SerializeField] Sprite up;
+    [SerializeField] Sprite down;
+    [SerializeField] Sprite horiz;
+
 
     // Start is called before the first frame update
     private void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        sprRend = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     private void Update()
     {
         //gets mouse position
-        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //moving left and right
         float moveInputX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
@@ -39,12 +46,42 @@ public class PlayerMove : MonoBehaviour
             anim.Play("Idle");
         }
 
+
         //Animation for moving
         if (Mathf.Abs(moveInputX) > 0 || Mathf.Abs(moveInputY) > 0)
         {
-            anim.Play("Run");
+            if (!(mousePos.y > transform.position.y + 1) && !(mousePos.y < transform.position.y - 1))
+            {
+                anim.Play("Run");
+            }
+            else if (mousePos.y > transform.position.y + 1)
+            {
+                anim.Play("UpRun");
+            }
+            else if (mousePos.y < transform.position.y - 1)
+            {
+                anim.Play("DownRun");
+            }
         }
 
+        if (mousePos.y > transform.position.y + 1)
+        {
+            sprRend.sprite = up;
+        }
 
+        if (mousePos.y < transform.position.y - 1)
+        {
+            sprRend.sprite = down;
+        }
+
+        if (mousePos.x < transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        if (mousePos.x > transform.position.x)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 }
