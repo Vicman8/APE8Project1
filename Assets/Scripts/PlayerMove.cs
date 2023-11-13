@@ -43,24 +43,24 @@ public class PlayerMove : MonoBehaviour
         //Animation for idle 
         if (moveInputX == 0)
         {
-            anim.Play("Idle");
+            //anim.Play("Idle");
         }
 
 
         //Animation for moving
         if (Mathf.Abs(moveInputX) > 0 || Mathf.Abs(moveInputY) > 0)
         {
-            if (!(mousePos.y > transform.position.y + 1) && !(mousePos.y < transform.position.y - 1))
+            if (!(mousePos.y > transform.position.y + 2) && !(mousePos.y < transform.position.y - 2))
             {
                 anim.Play("Run");
             }
-            else if (mousePos.y > transform.position.y + 1)
+            else if (mousePos.y > transform.position.y + 2)
             {
-                anim.Play("UpRun");
+                anim.Play("PlayerWalkingUp");
             }
-            else if (mousePos.y < transform.position.y - 1)
+            else if (mousePos.y < transform.position.y - 2)
             {
-                anim.Play("DownRun");
+                anim.Play("PlayerWalkingDown");
             }
         }
 

@@ -3408,6 +3408,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 285a8da898c4783499860bd8b318193b, type: 2}
+    - target: {fileID: 487670288681576837, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: up
+      value: 
+      objectReference: {fileID: 203348510, guid: 6b6ab807eb78bd94fa99231df7ea6e7f, type: 3}
+    - target: {fileID: 487670288681576837, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: down
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a484f2059b5d704a95b0f82233a6087, type: 3}
+    - target: {fileID: 487670288681576837, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: horiz
+      value: 
+      objectReference: {fileID: 1073842258, guid: ecb2c1cfc22d0254a9187c8d367a839d, type: 3}
     - target: {fileID: 487670288681576895, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
       propertyPath: m_Name
       value: Character
