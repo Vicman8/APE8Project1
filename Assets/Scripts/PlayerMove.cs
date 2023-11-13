@@ -22,7 +22,7 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         //gets mouse position
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         //moving left and right
         float moveInputX = Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime;
@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
         //Animation for idle 
         if (moveInputX == 0)
         {
-            anim.Play("idle");
+            anim.Play("Idle");
         }
 
         //Animation for moving
