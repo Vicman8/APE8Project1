@@ -39,7 +39,7 @@ public class Bottle : MonoBehaviour
         {
             rotSpeed = 0f;
             sprRend.transform.eulerAngles = new Vector3(0, 0, 0);
-            Destroy(newTarget);
+            Destroy(target);
         }
     }
     public void Throw(Vector2 startPos, Vector2 targetPos, float angle, float grav)
