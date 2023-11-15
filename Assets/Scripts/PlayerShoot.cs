@@ -46,11 +46,13 @@ public class PlayerShoot : MonoBehaviour
             {
                 Instantiate(bullet, transform.position, Quaternion.Euler(0, -180, -gunAngle));
                 timer = shotDelay;
+                anim.Play("GunShoot");
             }
             else
             {
                 Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, gunAngle));
                 timer = shotDelay;
+                anim.Play("GunShoot");
             }
             Debug.DrawRay(transform.position, gunAim, Color.green, 5f);
         }

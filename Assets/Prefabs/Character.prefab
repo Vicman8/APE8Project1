@@ -171,6 +171,9 @@ MonoBehaviour:
   speed: 50
   moveSpeed: 50
   gun: {fileID: 925465960921358990}
+  up: {fileID: 0}
+  down: {fileID: 0}
+  horiz: {fileID: 0}
 --- !u!1 &925465960921358990
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +185,7 @@ GameObject:
   - component: {fileID: 6389352168280400500}
   - component: {fileID: 7822417213639309967}
   - component: {fileID: 4881839892210378629}
+  - component: {fileID: 4271849022716991770}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -270,3 +274,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3994798515654284047, guid: 05e8a82d5a4f59d448a07a8dbe829790, type: 3}
   shotDelay: 0.5
+--- !u!95 &4271849022716991770
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925465960921358990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
