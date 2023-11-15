@@ -1629,8 +1629,8 @@ MonoBehaviour:
     sentences:
     - Howdy partner!! I'm the bartender of this fine establishment!
     - Use the left mouse button to shoot
-    - Press the spacebar to get bottles thrown at you
-    - Do your best to shoot the bottles and not get hit!
+    - I'm gonna throw some bottles at you
+    - Do your best to shoot them and not get hit!
 --- !u!114 &1241397544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3561,6 +3561,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4271849022716991770, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: dcc6386224279554d8b7d5ba98f03743, type: 2}
+    - target: {fileID: 7822417213639309967, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1844893714, guid: c137a1b910388924db0d6c34358b0681, type: 3}
     - target: {fileID: 8759424120040197429, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
       propertyPath: m_Constraints
       value: 4
