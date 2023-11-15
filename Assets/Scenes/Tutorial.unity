@@ -1631,6 +1631,7 @@ MonoBehaviour:
     - Use the left mouse button to shoot
     - I'm gonna throw some bottles at you
     - Do your best to shoot them and not get hit!
+    - Get Ready!
 --- !u!114 &1241397544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2306,6 +2307,7 @@ MonoBehaviour:
   - {fileID: 2707860018193306391, guid: e8cd583c235e6f44e8b10cc4a6cea313, type: 3}
   - {fileID: 1936135056943214254, guid: a805ef58a0e06f84fb68da6995a3b6a2, type: 3}
   - {fileID: 4078895542856779273, guid: 6a19cc3a80a350f40b01b0d7d32039dd, type: 3}
+  throwDelay: 1
 --- !u!1 &1581859616
 GameObject:
   m_ObjectHideFlags: 0

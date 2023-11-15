@@ -6,18 +6,32 @@ public class BarKeep : MonoBehaviour
 {
     [SerializeField] Bottle[] bottle;
     Vector2 randCoords;
+    private bool throwing = false;
+    [SerializeField] float throwDelay;
+    private float timer;
+    private int bottlesThrown;
 
     void Start()
     {
-        
+        timer = throwDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (throwing && timer > 0)
         {
+            timer -= Time.deltaTime;
+        }
+        if (throwing && timer <= 0 && bottlesThrown < 10)
+        {
+            bottlesThrown++;
+            timer = throwDelay;
             ThrowBottle();
+        }
+        if (bottlesThrown == 10)
+        {
+            throwing = false;
         }
     }
     void ThrowBottle()
