@@ -9,12 +9,16 @@ public class Bottle : MonoBehaviour
     [SerializeField] float rotSpeed;
     [SerializeField] GameObject target;
     [SerializeField] private Transform spriteContainer;
+    [SerializeField] BoxCollider2D bottleCollider;
     private float targetDist = 0;
     private Vector2 velocity = Vector2.zero;
     private float time = 0;
     private float timeToTarget = 0;
     private float gravity;
+
+
     private GameObject newTarget;
+    //public GameObject NewTarget { get { return newTarget; } }
 
     void Start()
     {
@@ -39,7 +43,9 @@ public class Bottle : MonoBehaviour
         {
             rotSpeed = 0f;
             sprRend.transform.eulerAngles = new Vector3(0, 0, 0);
+
             Destroy(newTarget);
+            bottleCollider.enabled = false;
         }
     }
     public void Throw(Vector2 startPos, Vector2 targetPos, float angle, float grav)
@@ -49,7 +55,7 @@ public class Bottle : MonoBehaviour
         gravity = grav;
         transform.position = startPos;
 
-        GameObject newTarget = Instantiate(target, targetPos, Quaternion.identity);
+        newTarget = Instantiate(target, targetPos, Quaternion.identity);
 
         targetDist = Vector2.Distance(startPos, targetPos);
 
@@ -61,5 +67,12 @@ public class Bottle : MonoBehaviour
         timeToTarget = targetDist / velocity.x;
 
         transform.rotation = Quaternion.LookRotation(targetPos - startPos);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "bullet")
+        {
+            Destroy(newTarget);
+        }
     }
 }

@@ -249,6 +249,7 @@ MonoBehaviour:
   rotSpeed: 50
   target: {fileID: 4856191143978042272, guid: 034461aa92397994a85cbb5ae065d2ea, type: 3}
   spriteContainer: {fileID: 1654849273058004106}
+  bottleCollider: {fileID: 7136718718087777036}
 --- !u!1 &5432709857348406047
 GameObject:
   m_ObjectHideFlags: 0

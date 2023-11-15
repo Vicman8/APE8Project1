@@ -96,7 +96,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432892014285279554}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -165,6 +165,7 @@ MonoBehaviour:
   rotSpeed: 50
   target: {fileID: 4856191143978042272, guid: 034461aa92397994a85cbb5ae065d2ea, type: 3}
   spriteContainer: {fileID: 4264298362488303177}
+  bottleCollider: {fileID: 5406042695150200523}
 --- !u!1 &1453793473597516750
 GameObject:
   m_ObjectHideFlags: 0

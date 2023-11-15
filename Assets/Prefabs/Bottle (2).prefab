@@ -197,6 +197,7 @@ MonoBehaviour:
   rotSpeed: 50
   target: {fileID: 4856191143978042272, guid: 034461aa92397994a85cbb5ae065d2ea, type: 3}
   spriteContainer: {fileID: 6653262746235500703}
+  bottleCollider: {fileID: 4804126885305347884}
 --- !u!1 &6237773293310800469
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,9 +223,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6237773293310800469}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 4.0000005, y: 4, z: 4.0000005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6653262746235500703}
