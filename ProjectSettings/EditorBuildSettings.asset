@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/APE8ProjectMVP.unity
     guid: 238ee1d7efe040e42bb0cd7b3af07175
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 017291d7c39022c45a634cf3228bf51a
   m_configObjects: {}

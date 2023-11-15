@@ -9,7 +9,9 @@ public class BarKeep : MonoBehaviour
     private bool throwing = false;
     [SerializeField] float throwDelay;
     private float timer;
-    private int bottlesThrown;
+    int bottlesThrown;
+    [SerializeField] GameObject Door;
+    public int BottlesThrown { get { return bottlesThrown; } }
 
     void Start()
     {
@@ -19,6 +21,10 @@ public class BarKeep : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            throwing = true;
+        }
         if (throwing && timer > 0)
         {
             timer -= Time.deltaTime;
@@ -31,6 +37,7 @@ public class BarKeep : MonoBehaviour
         }
         if (bottlesThrown == 10)
         {
+            Door.SetActive(true);
             throwing = false;
         }
     }

@@ -9,4 +9,8 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
+    public void LastScene()
+    {
+        SceneManager.LoadScene("Ending");
+    }
 }
