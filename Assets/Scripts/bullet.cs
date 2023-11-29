@@ -5,14 +5,13 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float speed;
+    private CircleCollider2D hitbox;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        hitbox = GetComponent<CircleCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.position += (transform.TransformDirection(Vector3.right)) * speed * Time.deltaTime;
@@ -20,11 +19,10 @@ public class bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "bottle")
-        {
+
+        RaycastHit2D hit = Physics2D.CircleCast(hitbox.bounds.center, hitbox.radius, transform.up, hitbox.radius);
+        if(hit.collider != null) {
+            hit.collider.GetComponent<EnemyHealth>().ReceiveDamage();
             Destroy(gameObject);
         }
     }

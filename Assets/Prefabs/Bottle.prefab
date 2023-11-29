@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 2707860018193306389}
   - component: {fileID: 2707860018193306388}
   - component: {fileID: 2707860018193306391}
+  - component: {fileID: -7220646565912808003}
   m_Layer: 0
   m_Name: Bottle
   m_TagString: bottle
@@ -250,6 +251,20 @@ MonoBehaviour:
   target: {fileID: 4856191143978042272, guid: 034461aa92397994a85cbb5ae065d2ea, type: 3}
   spriteContainer: {fileID: 1654849273058004106}
   bottleCollider: {fileID: 7136718718087777036}
+--- !u!114 &-7220646565912808003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2707860018193306398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d19eddd34005d40a6371e35d450753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 1
+  defaultBehavior: 1
 --- !u!1 &5432709857348406047
 GameObject:
   m_ObjectHideFlags: 0
