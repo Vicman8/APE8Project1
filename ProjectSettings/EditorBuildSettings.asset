@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: c6c3a32be2d02614bbc1c88c150b39dd
   - enabled: 1
+    path: Assets/Scenes/Outside.unity
+    guid: 2ba54c5e7928ee4469300a165c309d24
+  - enabled: 1
+    path: Assets/Scenes/Board.unity
+    guid: 72d60bdeb5c67fe4bac2aa2bf714cde6
+  - enabled: 1
     path: Assets/Scenes/APE8ProjectMVP.unity
     guid: 238ee1d7efe040e42bb0cd7b3af07175
   - enabled: 1
