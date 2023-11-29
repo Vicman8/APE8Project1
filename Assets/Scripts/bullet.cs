@@ -21,7 +21,7 @@ public class bullet : MonoBehaviour
         }
 
         RaycastHit2D hit = Physics2D.CircleCast(hitbox.bounds.center, hitbox.radius, transform.up, hitbox.radius);
-        if(hit.collider != null) {
+        if(hit.collider.GetComponent<EnemyHealth>() != null) {
             hit.collider.GetComponent<EnemyHealth>().ReceiveDamage();
             Destroy(gameObject);
         }
