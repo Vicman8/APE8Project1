@@ -8,6 +8,8 @@ public class boss : MonoBehaviour
     public int ihealth;
     private int chealth;
     public TMP_Text mytext;
+
+    [SerializeField] private GameObject beam;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,19 @@ public class boss : MonoBehaviour
         {
             chealth -= 5;
             mytext.text = "Boss Health: " + chealth + " / " + ihealth;
+        }
+    }
+    private void shootAttack()
+    {
+        int randDirection = Random.Range(0, 2);
+
+        if (randDirection == 0)
+        {
+            GameObject newBeam = Instantiate(beam, transform.position, Quaternion.Euler(0, 0, -90));
+        }
+        else
+        {
+            GameObject newBeam = Instantiate(beam, transform.position, Quaternion.Euler(0, 0, 90));
         }
     }
 }
