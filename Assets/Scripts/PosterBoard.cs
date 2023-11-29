@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PosterBoard : MonoBehaviour
 {
@@ -20,9 +21,4 @@ public class PosterBoard : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-        //SceneManager.LoadScene("Board");
-        //Destroy(this.gameObject);
-    }
 }
