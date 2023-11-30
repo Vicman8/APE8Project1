@@ -33,7 +33,7 @@ public class DoorOpen : MonoBehaviour
         if (collision.gameObject.tag == "player")
         {
             Debug.Log("collision");
-            SceneChange.LastScene();
+            SceneChange.ToOutsideScene();
         }
     }
     public void doorLead()

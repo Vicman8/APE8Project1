@@ -18,4 +18,9 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("Title");
     }
+
+    public void ToOutsideScene()
+    {
+        SceneManager.LoadScene("Outside");
+    }
 }
