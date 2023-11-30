@@ -23,4 +23,14 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("Outside");
     }
+
+    public void ToPosterBoard()
+    {
+        SceneManager.LoadScene("Board");
+    }
+
+    public void ToBoss()
+    {
+        SceneManager.LoadScene("CactusBoss");
+    }
 }
