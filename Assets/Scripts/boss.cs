@@ -8,18 +8,23 @@ public class boss : MonoBehaviour
     public int ihealth;
     private int chealth;
     public TMP_Text mytext;
+    private bool attacking = false;
+    private float timer = 6f;
 
+
+    [SerializeField] private GameObject grenade;
     [SerializeField] private GameObject beam;
-    // Start is called before the first frame update
+    
     void Start()
     {
         chealth = ihealth;
         mytext.text = "Boss Health: " + ihealth + " / " + ihealth;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        timer -= Time.deltaTime;
         if (chealth <= 0)
         {
             Destroy(gameObject);
@@ -27,7 +32,19 @@ public class boss : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            shootAttack();
+            if (!attacking)
+            {
+                //shootAttack();
+                grenadeShoot();
+                grenadeShoot();
+                grenadeShoot();
+                attacking = true;
+                timer = 6f;
+            }
+        }
+        if (timer <= 0)
+        {
+            attacking = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,5 +68,8 @@ public class boss : MonoBehaviour
             GameObject newBeam = Instantiate(beam, transform.position, Quaternion.Euler(0, 0, 90));
         }
     }
-
+    private void grenadeShoot()
+    {
+        Instantiate(grenade, transform.position, Quaternion.identity);
+    }
 }
