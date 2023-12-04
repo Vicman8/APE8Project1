@@ -18,12 +18,12 @@ public class bullet : MonoBehaviour
         if (transform.position.x > Mathf.Abs(15) || transform.position.y > Mathf.Abs(15))
         {
             Destroy(gameObject);
-        }
-
-        RaycastHit2D hit = Physics2D.CircleCast(hitbox.bounds.center, hitbox.radius, transform.up, hitbox.radius);
-        if(hit.collider.GetComponent<EnemyHealth>() != null) {
-            hit.collider.GetComponent<EnemyHealth>().ReceiveDamage();
-            Destroy(gameObject);
+        } else {
+            RaycastHit2D hit = Physics2D.CircleCast(hitbox.bounds.center, hitbox.radius, transform.up, hitbox.radius);
+            if(hit.collider.GetComponent<EnemyHealth>() != null) {
+                hit.collider.GetComponent<EnemyHealth>().ReceiveDamage();
+                Destroy(gameObject);
+            }
         }
     }
 }
