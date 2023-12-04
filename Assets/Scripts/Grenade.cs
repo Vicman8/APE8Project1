@@ -8,9 +8,13 @@ public class Grenade : MonoBehaviour
     private bool movingDOWN = false;
     private Vector3 randCoords;
     private Vector3 targetCoords;
+    private float explosTimer = 3f;
+    private SpriteRenderer sprRend;
+    private Animator anim;
     void Start()
     {
-        
+        sprRend = gameObject.GetComponent<SpriteRenderer>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -34,7 +38,16 @@ public class Grenade : MonoBehaviour
         {
             movingDOWN = false;
             movingUP = false;
-
+            explosTimer -= Time.deltaTime;
+            anim.Play("Grenade");
+        }
+        if (explosTimer <= 1 && explosTimer > 0)
+        {
+            transform.localScale = new Vector3(5, 5, 0);
+        }
+        if (explosTimer <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     private Vector3 randomizeCoords(Vector3 randCoords)
