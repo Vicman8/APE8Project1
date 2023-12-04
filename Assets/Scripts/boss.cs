@@ -24,6 +24,11 @@ public class boss : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            shootAttack();
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -46,4 +51,5 @@ public class boss : MonoBehaviour
             GameObject newBeam = Instantiate(beam, transform.position, Quaternion.Euler(0, 0, 90));
         }
     }
+
 }
