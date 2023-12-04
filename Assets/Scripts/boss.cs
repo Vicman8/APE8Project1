@@ -10,6 +10,7 @@ public class boss : MonoBehaviour
     public TMP_Text mytext;
     private bool attacking = false;
     private float timer = 6f;
+
     private int randNum;
     private GameObject[] spikes = new GameObject[10];
     private GameObject[] targets = new GameObject[10];
@@ -40,7 +41,7 @@ public class boss : MonoBehaviour
             if (!attacking)
             {
                 randNum = Random.Range(0, 2);
-                if (randNum == 0)
+                /*if (randNum == 0)
                 {
                     grenadeShoot();
                     grenadeShoot();
@@ -56,7 +57,7 @@ public class boss : MonoBehaviour
                     spikeTarget();
                 }
                  */
-                //spikeTargets();
+                spikeTargets();
                 attacking = true;
                 timer = 6f;
             }
@@ -111,6 +112,14 @@ public class boss : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             spikes[i] = Instantiate(spike, targets[i].transform.position, Quaternion.identity);
+            Destroy(targets[i]);
+        }
+    }
+    private void spikeClear()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Destroy(spikes[i]);
         }
     }
 }
