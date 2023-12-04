@@ -39,8 +39,8 @@ public class boss : MonoBehaviour
         {
             if (!attacking)
             {
-                randNum = Random.Range(0, 3);
-                /*if (randNum == 0)
+                randNum = Random.Range(0, 2);
+                if (randNum == 0)
                 {
                     grenadeShoot();
                     grenadeShoot();
@@ -51,12 +51,12 @@ public class boss : MonoBehaviour
                 {
                     shootAttack();
                 }
-                else 
+                /*else 
                 {
                     spikeTarget();
                 }
                  */
-                spikeTargets();
+                //spikeTargets();
                 attacking = true;
                 timer = 6f;
             }
