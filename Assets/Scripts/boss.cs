@@ -8,21 +8,62 @@ public class boss : MonoBehaviour
     public int ihealth;
     private int chealth;
     public TMP_Text mytext;
+    private bool attacking = false;
+    private float timer = 6f;
+    private int randNum;
+    private GameObject[] spikes = new GameObject[10];
+    private GameObject[] targets = new GameObject[10];
 
+
+    [SerializeField] private GameObject grenade;
     [SerializeField] private GameObject beam;
-    // Start is called before the first frame update
+    [SerializeField] private GameObject spike;
+    [SerializeField] private GameObject target;
+    
     void Start()
     {
         chealth = ihealth;
         mytext.text = "Boss Health: " + ihealth + " / " + ihealth;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        timer -= Time.deltaTime;
         if (chealth <= 0)
         {
             Destroy(gameObject);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!attacking)
+            {
+                randNum = Random.Range(0, 2);
+                if (randNum == 0)
+                {
+                    grenadeShoot();
+                    grenadeShoot();
+                    grenadeShoot();
+                }
+
+                else if (randNum == 1)
+                {
+                    shootAttack();
+                }
+                /*else 
+                {
+                    spikeTarget();
+                }
+                 */
+                //spikeTargets();
+                attacking = true;
+                timer = 6f;
+            }
+        }
+        if (timer <= 0)
+        {
+            attacking = false;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,6 +85,32 @@ public class boss : MonoBehaviour
         else
         {
             GameObject newBeam = Instantiate(beam, transform.position, Quaternion.Euler(0, 0, 90));
+        }
+    }
+    private void grenadeShoot()
+    {
+        Instantiate(grenade, transform.position, Quaternion.identity);
+    }
+    private void spikeTargets()
+    {
+        //GameObject[] spikes = new GameObject[10];
+        Vector3 randCoords;
+
+        for (int i = 0; i < 10; i++)
+        {
+            randCoords = new Vector3(Random.Range(-7.5f, 7.5f), Random.Range(-4.2f, 4.12f), 0f);
+            targets[i] = Instantiate(target, randCoords, Quaternion.identity);
+        }
+        for (int i = 0; i < 10; i++)
+        {
+            targets[i].GetComponent<Animator>().Play("Target");
+        }
+    }
+    public void SpikeAttack()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            spikes[i] = Instantiate(spike, targets[i].transform.position, Quaternion.identity);
         }
     }
 }
