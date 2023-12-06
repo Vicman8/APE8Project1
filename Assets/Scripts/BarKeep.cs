@@ -12,20 +12,25 @@ public class BarKeep : MonoBehaviour
     int bottlesThrown;
     [SerializeField] GameObject Door;
     public int BottlesThrown { get { return bottlesThrown; } }
+    public Dialogue dialogue;
+    public bool isTalking;
 
     void Start()
     {
         timer = throwDelay;
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        isTalking = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+       if(isTalking)
         {
-            throwing = true;
+            return;
         }
+
+        throwing = true;
         if (throwing && timer > 0)
         {
             timer -= Time.deltaTime;

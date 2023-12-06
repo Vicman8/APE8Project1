@@ -1893,7 +1893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1241397542
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2612,6 +2612,15 @@ MonoBehaviour:
   - {fileID: 4078895542856779273, guid: 6a19cc3a80a350f40b01b0d7d32039dd, type: 3}
   throwDelay: 1
   Door: {fileID: 144166815}
+  dialogue:
+    name: Bartender
+    sentences:
+    - Howdy partner!! I'm the bartender of this fine establishment!
+    - Use the left mouse button to shoot
+    - I'm gonna throw some bottles at you
+    - Do your best to shoot them and not get hit!
+    - Get Ready
+  isTalking: 0
 --- !u!1 &1581859616
 GameObject:
   m_ObjectHideFlags: 0
