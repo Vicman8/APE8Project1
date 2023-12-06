@@ -175,6 +175,7 @@ MonoBehaviour:
   up: {fileID: 0}
   down: {fileID: 0}
   horiz: {fileID: 0}
+  plHealth: {fileID: 1581231405101477939}
 --- !u!1 &925465960921358990
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +307,7 @@ GameObject:
   - component: {fileID: 4609444737895366776}
   - component: {fileID: 4270648588325189417}
   - component: {fileID: 6849296885124782535}
+  - component: {fileID: 1581231405101477939}
   m_Layer: 6
   m_Name: Hitbox
   m_TagString: Untagged
@@ -396,3 +398,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1581231405101477939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5997615877016655215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e048be5cb98c842bbcb26f18ba03af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 1
+  defaultBehavior: 1
+  isInvul: 0
