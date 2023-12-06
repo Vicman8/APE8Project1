@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Sprite down;
     [SerializeField] Sprite horiz;
 
+    public PlayerLose plHealth;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -82,6 +84,14 @@ public class PlayerMove : MonoBehaviour
         if (mousePos.x > transform.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
+
+        //flashing for when player is invulnerable
+        if(plHealth.isInvul) {
+            sprRend.enabled = !sprRend.enabled;
+        } else {
+            sprRend.enabled = true;
         }
     }
 }

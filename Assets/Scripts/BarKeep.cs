@@ -13,8 +13,6 @@ public class BarKeep : MonoBehaviour
     [SerializeField] GameObject Door;
     public int BottlesThrown { get { return bottlesThrown; } }
 
-    public Dialogue dialogue;
-
     void Start()
     {
         timer = throwDelay;
