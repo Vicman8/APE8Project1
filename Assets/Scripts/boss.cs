@@ -12,8 +12,8 @@ public class boss : MonoBehaviour
     private float timer = 6f;
 
     private int randNum;
-    private GameObject[] spikes = new GameObject[10];
-    private GameObject[] targets = new GameObject[10];
+    private GameObject[] spikes = new GameObject[20];
+    private GameObject[] targets = new GameObject[20];
 
 
     [SerializeField] private GameObject grenade;
@@ -40,30 +40,30 @@ public class boss : MonoBehaviour
         {
             if (!attacking)
             {
-                randNum = Random.Range(0, 2);
-                /*if (randNum == 0)
+                randNum = Random.Range(0, 3);
+                if (randNum == 0)
                 {
-                    grenadeShoot();
-                    grenadeShoot();
-                    grenadeShoot();
+                    for (int i = 0; i < 10; i++)
+                    {
+                        grenadeShoot();
+                    }
                 }
 
                 else if (randNum == 1)
                 {
                     shootAttack();
                 }
-                /*else 
+                else 
                 {
-                    spikeTarget();
+                    spikeTargets();
                 }
-                 */
-                spikeTargets();
                 attacking = true;
                 timer = 6f;
             }
         }
         if (timer <= 0)
         {
+            //spikeClear();
             attacking = false;
         }
     }
@@ -97,29 +97,23 @@ public class boss : MonoBehaviour
         //GameObject[] spikes = new GameObject[10];
         Vector3 randCoords;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             randCoords = new Vector3(Random.Range(-7.5f, 7.5f), Random.Range(-4.2f, 4.12f), 0f);
             targets[i] = Instantiate(target, randCoords, Quaternion.identity);
         }
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             targets[i].GetComponent<Animator>().Play("Target");
         }
     }
     public void SpikeAttack()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             spikes[i] = Instantiate(spike, targets[i].transform.position, Quaternion.identity);
             Destroy(targets[i]);
         }
     }
-    private void spikeClear()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            Destroy(spikes[i]);
-        }
-    }
+    
 }
