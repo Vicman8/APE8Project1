@@ -63,7 +63,6 @@ public class boss : MonoBehaviour
         }
         if (timer <= 0)
         {
-            //spikeClear();
             attacking = false;
         }
     }
@@ -94,7 +93,6 @@ public class boss : MonoBehaviour
     }
     private void spikeTargets()
     {
-        //GameObject[] spikes = new GameObject[10];
         Vector3 randCoords;
 
         for (int i = 0; i < 20; i++)

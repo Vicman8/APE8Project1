@@ -18,7 +18,6 @@ public class spikeTarget : MonoBehaviour
     }
     public void spikeAttack()
     {
-        print("SPIKE");
         boss targeting = Boss.GetComponent<boss>();
         targeting.SpikeAttack();
     }
