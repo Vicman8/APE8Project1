@@ -3883,7 +3883,7 @@ PrefabInstance:
     - target: {fileID: 3033221707929831431, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1073842258, guid: ecb2c1cfc22d0254a9187c8d367a839d, type: 3}
+      objectReference: {fileID: 107518969, guid: fb2d8f11d2befca42a5f8f8537dde272, type: 3}
     - target: {fileID: 3033221707929831431, guid: 7079782542bc5c54a91a03675cdbaf22, type: 3}
       propertyPath: m_SortingOrder
       value: 2
