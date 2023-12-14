@@ -11,6 +11,7 @@ public class Grenade : MonoBehaviour
     private float explosTimer = 3f;
     private SpriteRenderer sprRend;
     private Animator anim;
+
     void Start()
     {
         sprRend = gameObject.GetComponent<SpriteRenderer>();
@@ -40,10 +41,6 @@ public class Grenade : MonoBehaviour
             movingUP = false;
             explosTimer -= Time.deltaTime;
             anim.Play("Grenade");
-        }
-        if (explosTimer <= 1 && explosTimer > 0)
-        {
-            transform.localScale = new Vector3(5, 5, 0);
         }
         if (explosTimer <= 0)
         {

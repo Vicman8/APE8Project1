@@ -14,6 +14,7 @@ public class boss : MonoBehaviour
     private int randNum;
     private GameObject[] spikes = new GameObject[20];
     private GameObject[] targets = new GameObject[20];
+    private Animator anim;
 
 
     [SerializeField] private GameObject grenade;
@@ -23,6 +24,7 @@ public class boss : MonoBehaviour
     
     void Start()
     {
+        anim = gameObject.GetComponent<Animator>();
         chealth = ihealth;
         mytext.text = "Boss Health: " + ihealth + " / " + ihealth;
     }
@@ -93,6 +95,7 @@ public class boss : MonoBehaviour
     }
     private void spikeTargets()
     {
+        anim.Play("cactusGroundSpike");
         Vector3 randCoords;
 
         for (int i = 0; i < 20; i++)
