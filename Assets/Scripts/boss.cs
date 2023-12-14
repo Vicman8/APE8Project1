@@ -91,7 +91,7 @@ public class boss : MonoBehaviour
     }
     private void grenadeShoot()
     {
-        Instantiate(grenade, transform.position, Quaternion.identity);
+        Instantiate(grenade, transform.position, Quaternion.Euler(0, 0, 180));
     }
     private void spikeTargets()
     {
