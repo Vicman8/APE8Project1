@@ -79,6 +79,7 @@ public class boss : MonoBehaviour
     private void shootAttack()
     {
         int randDirection = Random.Range(0, 2);
+        anim.Play("cactusSpin");
 
         if (randDirection == 0)
         {
