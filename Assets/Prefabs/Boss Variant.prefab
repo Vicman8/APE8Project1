@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1538010772634331777, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1538010772634331802, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
       propertyPath: m_Name
-      value: Boss
+      value: Boss Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1538010772634331804, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
       propertyPath: m_RootOrder
@@ -71,5 +75,96 @@ PrefabInstance:
       propertyPath: mytext
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1538010772634331807, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538010772634331807, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538010772634331807, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538010772634331807, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1538010773883611716, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+    - {fileID: 1538010772634331807, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+--- !u!1 &7870316896647936597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1538010772634331802, guid: 210d9f09616b1c145b31c4f44e8ef3a4, type: 3}
+  m_PrefabInstance: {fileID: 8674187019521593551}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3707934951540826164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870316896647936597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d19eddd34005d40a6371e35d450753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitpoints: 100
+  defaultBehavior: 1
+--- !u!60 &8152560053008697139
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870316896647936597}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.22102405, y: -0.004390493}
+      - {x: 0.2093465, y: 0.07264364}
+      - {x: 0.14444415, y: 0.07406824}
+      - {x: 0.13188177, y: 0.025159866}
+      - {x: 0.07455782, y: 0.026346467}
+      - {x: 0.072529264, y: 0.07229504}
+      - {x: 0.04468037, y: 0.09527156}
+      - {x: 0.039564345, y: 0.15790755}
+      - {x: 0.01956435, y: 0.16466609}
+      - {x: 0.0367594, y: 0.1954761}
+      - {x: 0.032892846, y: 0.22827776}
+      - {x: 0.01, y: 0.23822981}
+      - {x: -0.015403099, y: 0.20057447}
+      - {x: -0.06416125, y: 0.13057452}
+      - {x: -0.087886825, y: 0.05852873}
+      - {x: -0.09160131, y: -0.056519967}
+      - {x: -0.14262156, y: -0.056128714}
+      - {x: -0.14488271, y: -0.021654306}
+      - {x: -0.17499246, y: 0.004418851}
+      - {x: -0.2237256, y: -0.01618402}
+      - {x: -0.22518528, y: -0.101471275}
+      - {x: -0.19788687, y: -0.12910323}
+      - {x: -0.09810463, y: -0.12907991}
+      - {x: -0.098104656, y: -0.27999997}
+      - {x: -0.0768628, y: -0.32}
+      - {x: 0.05810465, y: -0.32}
+      - {x: 0.07788683, y: -0.29882765}
+      - {x: 0.07372559, y: -0.05232137}
+      - {x: 0.20226589, y: -0.050275598}

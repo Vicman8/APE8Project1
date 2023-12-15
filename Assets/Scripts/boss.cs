@@ -5,8 +5,8 @@ using TMPro;
 
 public class boss : MonoBehaviour
 {
-    public int ihealth;
-    private int chealth;
+    private int ihealth;
+    private EnemyHealth chealth;
     public TMP_Text mytext;
     private bool attacking = false;
     private float timer = 6f;
@@ -25,15 +25,18 @@ public class boss : MonoBehaviour
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
-        chealth = ihealth;
-        mytext.text = "Boss Health: " + ihealth + " / " + ihealth;
+        chealth = GetComponent<EnemyHealth>();
+        ihealth = chealth.hitpoints;
+        mytext.text = "Boss Health: " + chealth.hitpoints + " / " + ihealth;
     }
 
     
     void Update()
     {
+        mytext.text = "Boss Health: " + chealth.hitpoints + " / " + ihealth;
+
         timer -= Time.deltaTime;
-        if (chealth <= 0)
+        if (chealth.hitpoints <= 0)
         {
             Destroy(gameObject);
         }
@@ -64,14 +67,7 @@ public class boss : MonoBehaviour
             attacking = false;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "bullet")
-        {
-            chealth -= 5;
-            mytext.text = "Boss Health: " + chealth + " / " + ihealth;
-        }
-    }
+
     private void shootAttack()
     {
         int randDirection = Random.Range(0, 2);

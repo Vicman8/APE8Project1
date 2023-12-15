@@ -126,8 +126,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5720c40796ba48c4fb7c4548eb0a54d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ihealth: 1000
   mytext: {fileID: 0}
+  grenade: {fileID: 0}
+  beam: {fileID: 0}
+  spike: {fileID: 0}
+  target: {fileID: 0}
 --- !u!50 &1538010772634331777
 Rigidbody2D:
   serializedVersion: 4

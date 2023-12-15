@@ -169,13 +169,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1381a7332f0c824b8d1015975f64270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  moveSpeed: 50
   gun: {fileID: 925465960921358990}
   up: {fileID: 0}
   down: {fileID: 0}
   horiz: {fileID: 0}
   plHealth: {fileID: 1581231405101477939}
+  isRolling: 0
 --- !u!1 &925465960921358990
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e048be5cb98c842bbcb26f18ba03af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoints: 1
+  hitpoints: 3
   defaultBehavior: 1
   isInvul: 0
+  plMove: {fileID: 487670288681576837}

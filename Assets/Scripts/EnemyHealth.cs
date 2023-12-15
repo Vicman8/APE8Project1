@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void CheckThreshold() {
-        if(defaultBehavior && hitpoints <= 0) {
+        if(defaultBehavior && (hitpoints <= 0)) {
             Death();
         }
     }

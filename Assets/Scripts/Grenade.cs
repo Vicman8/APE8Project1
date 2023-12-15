@@ -12,10 +12,14 @@ public class Grenade : MonoBehaviour
     private SpriteRenderer sprRend;
     private Animator anim;
 
+    private DamageRaycast damageCirc;
+
     void Start()
     {
         sprRend = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
+
+        damageCirc = GetComponent<DamageRaycast>();
     }
 
     void Update()
@@ -41,6 +45,11 @@ public class Grenade : MonoBehaviour
             movingUP = false;
             explosTimer -= Time.deltaTime;
             anim.Play("Grenade");
+
+            
+        }
+        if(explosTimer <= 1) {
+            damageCirc.HitboxCircle(transform.position, 2.25f);
         }
         if (explosTimer <= 0)
         {
