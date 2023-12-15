@@ -16,7 +16,6 @@ public class Bottle : MonoBehaviour
     private float timeToTarget = 0;
     private float gravity;
 
-
     private GameObject newTarget;
     //public GameObject NewTarget { get { return newTarget; } }
 
