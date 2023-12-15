@@ -1423,6 +1423,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3707934951540826164, guid: ebfdc25c30945554289b214aed9b0fe7, type: 3}
+      propertyPath: hitpoints
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7870316896647936593, guid: ebfdc25c30945554289b214aed9b0fe7, type: 3}
       propertyPath: beam
       value: 

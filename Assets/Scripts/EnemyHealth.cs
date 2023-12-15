@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int hitpoints = 1;
+    public int hitpoints = 50;
     public bool defaultBehavior = true;
 
     public void ReceiveDamage() {
