@@ -37,31 +37,27 @@ public class boss : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!attacking)
         {
-            if (!attacking)
+            randNum = Random.Range(0, 3);
+            if (randNum == 0)
             {
-                randNum = Random.Range(0, 3);
-                if (randNum == 0)
+                for (int i = 0; i < 10; i++)
                 {
-                    for (int i = 0; i < 10; i++)
-                    {
-                        grenadeShoot();
-                    }
+                    grenadeShoot();
                 }
-
-                else if (randNum == 1)
-                {
-                    shootAttack();
-                }
-                else 
-                {
-                    spikeTargets();
-                }
-                attacking = true;
-                timer = 6f;
             }
+
+            else if (randNum == 1)
+            {
+                shootAttack();
+            }
+            else 
+            {
+                spikeTargets();
+            }
+            attacking = true;
+            timer = 6f;
         }
         if (timer <= 0)
         {
@@ -79,6 +75,7 @@ public class boss : MonoBehaviour
     private void shootAttack()
     {
         int randDirection = Random.Range(0, 2);
+        anim.Play("cactusSpin");
 
         if (randDirection == 0)
         {
@@ -91,7 +88,8 @@ public class boss : MonoBehaviour
     }
     private void grenadeShoot()
     {
-        Instantiate(grenade, transform.position, Quaternion.identity);
+        anim.Play("cactusGrenade");
+        Instantiate(grenade, transform.position, Quaternion.Euler(0, 0, 180));
     }
     private void spikeTargets()
     {
