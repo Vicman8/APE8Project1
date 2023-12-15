@@ -43,10 +43,14 @@ public class PlayerMove : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if(Time.time >= rollDelay+1.25f && queRoll) { //if player initiates roll
-            anim.Play("DodgeRoll");
-            isRolling = true;
-            queRoll = false;
-            rollDelay = Time.time;
+            if(!plHealth.isInvul) {
+                anim.Play("DodgeRoll");
+                isRolling = true;
+                queRoll = false;
+                rollDelay = Time.time;
+            } else {
+                queRoll = false; //cancels activation of roll if player was hit
+            }
         } else if(!isRolling) { //if player is not rolling
 
             //reworked movement code (read input)
