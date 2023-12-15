@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
     public int hitpoints = 50;
     public bool defaultBehavior = true;
+
 
     public void ReceiveDamage() {
         hitpoints--;
@@ -24,6 +26,11 @@ public class EnemyHealth : MonoBehaviour
     }
 
     public void Death() {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+    }
+
+    public void SceneChange()
+    {
+        SceneManager.LoadScene("Ending");
     }
 }

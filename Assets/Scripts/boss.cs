@@ -38,7 +38,8 @@ public class boss : MonoBehaviour
         timer -= Time.deltaTime;
         if (chealth.hitpoints <= 0)
         {
-            Destroy(gameObject);
+            anim.Play("CactusDeath");
+            //Destroy(gameObject);
         }
         if (!attacking)
         {
